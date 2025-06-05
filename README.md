@@ -26,7 +26,8 @@ Dataset Access:
 	       ./run_synthea -p 10000
 6.	CSV files generated in:
 	synthea/output/csv/
-Tables Used (7):
+
+**Tables Used (7):**
 •	Patient
 •	Encounter
 •	Condition
@@ -34,6 +35,7 @@ Tables Used (7):
 •	Claim
 •	Claim_Transaction
 •	Payers
+
 **Preparation:**
 SQL Data Cleaning:
 1.	Standardize Date Formats - Ensure consistency across STARTDATE, STOPDATE, FROMDATE, TODATE.
@@ -73,7 +75,8 @@ Primary Tables:
 •	claim_transactions: Includes claim_id, transaction type, amount, and outstanding.
 •	payers: Maps payer_id to payer_name (e.g., private, Medicare, Medicaid).
 •	ReadmissionFlags (DAX table): Maps encounter_id to TrueReadmission and ProxyReadmission.
-Data Relationships:
+
+**Data Relationships:**
 •	Proper relationships between tables (1: Many between patient and other entities).
 •	Star schema approach where possible.
 •	Use calculated tables/measures to support dashboards.
@@ -85,18 +88,22 @@ o	A DateTable created to link dates on from different table etc..
 **Dashboard Summaries**
 
 **1. Patient Overview Dashboard**
-Purpose: Summarize patient demographics, readmission statistics, and risk levels.
-Key DAX Metrics:
+
+**Purpose:** Summarize patient demographics, readmission statistics, and risk levels.
+
+**Key DAX Metrics:**
 •	TotalPatients: Count of distinct patients.
 •	TrueReadmitted: Patients with Inpatient readmission.
 •	ProxyReadmitted: Patient with Urgentcare & Emergency
 •	ReadmittedPatients_30days
 •	Readmission Encounters by Condition
-Visual Highlights:
+
+**Visual Highlights:**
 •	KPI Cards: Total patients, readmissions, average age.
 •	Pie Chart: Readmissions by age group.
 •	Bar Chart: Encounters by Condition.
-KeyInsight:
+
+**KeyInsight:**
 Patients aged 60+ and those with long inpatient stays have significantly higher readmission rates.
 
 ![Patient page](https://github.com/user-attachments/assets/a3eb5fd4-a662-408b-8579-3a71b38753c9)
@@ -104,17 +111,21 @@ Patients aged 60+ and those with long inpatient stays have significantly higher 
 ----
 
 **2. Encounter Analysis Dashboard**
-Purpose: Analyze encounter dynamics and how they relate to readmissions.
-Key DAX Metrics:
+
+**Purpose:** Analyze encounter dynamics and how they relate to readmissions.
+
+**Key DAX Metrics:**
 •	TrueReadmissionCount, ProxyReadmissionCount
 •	SelectedReadmissionRate: Based on slicer selection (True/Proxy)
 •	ReadmissionByEncounterClass: Disaggregated view by encounter type
-Visual Highlights:
+
+**Visual Highlights:**
 •	Area Chart: Trend of readmissions over time by encounter type.
 •	Funnel: Flow from initial to readmit encounter types.
 •	Column: Time gap distributions.
 •	Scatter Plot: Stay duration vs. readmission rate.
-KeyInsight:
+
+**KeyInsight:**
 Emergency visits often precede inpatient readmissions. March and December are peak readmission windows, possibly cause of the festive seasons
 
 ![Encounter Analysis](https://github.com/user-attachments/assets/6cc3455c-2a55-46a6-b4f2-a892576d8157)
@@ -122,16 +133,21 @@ Emergency visits often precede inpatient readmissions. March and December are pe
 ----
 
 **3. Insurance & Financial Impact Dashboard**
-Purpose: Evaluate how readmissions impact claim amounts, insurance coverage, and unpaid balances.
-Key DAX Metrics:
+
+**Purpose:**
+Evaluate how readmissions impact claim amounts, insurance coverage, and unpaid balances.
+
+**Key DAX Metrics:**
 •	TotalClaimAmount, ReadmissionClaimAmount, AvgClaimPerReadmission
 •	Financial breakdown: ReadmissionCharges, Payments, Transfers, Outstanding
-Visual Highlights:
+
+**Visual Highlights:**
 •	Stacked Column Chart: Readmissions by insurance type and encounter class.
 •	KPI Card: Average claim per readmission.
 •	Clustered Column Chart: Cost comparison (readmitted vs. non-readmitted).
 •	Area Chart: Cost Timeline 
-KeyInsight:
+
+**KeyInsight:**
 Medicare pays the highest. No-Insurance patients accumulate the largest unpaid balances.
 
 ![Financial Impact report](https://github.com/user-attachments/assets/3ff6ea95-f69e-422e-9019-1d3f137b8c27)
@@ -149,5 +165,10 @@ Medicare pays the highest. No-Insurance patients accumulate the largest unpaid b
 •	Certain encounterclass had shorter discharge → readmit gaps.
 •	Medication review due(situation) Conditions description had highest true readmission.
 •	The highest stay of patients is 0-7days
+
+**Analyzed/Prepared By:**
+Oladokun Abisola
+Data Analyst
+May 2025
 
 
