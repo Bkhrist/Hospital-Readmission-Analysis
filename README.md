@@ -166,6 +166,20 @@ Medicare pays the highest. No-Insurance patients accumulate the largest unpaid b
 •	Medication review due(situation) Conditions description had highest true readmission.
 •	The highest stay of patients is 0-7days
 
+**6. Health Care Report**
+## 📊 Power BI Report
+
+This repository contains the analysis and insights for the **Healthcare Data Analysis Project**. The full interactive Power BI report is available as a `.pbix` file.
+
+> **Note**: Due to GitHub's file size limitations, the `.pbix` file is hosted externally on Google Drive.
+
+### 🔗 Download the Report
+
+[Click here to download the Power BI `.pbix` file](https://drive.google.com/file/d/1ns8JR0rw2QsxcWE3nUK0nSHoZS2FxaGX/view?usp=sharing)
+
+> Make sure you're signed into a Google account to access the file if needed.
+
+
 **Analyzed/Prepared By:**
 Oladokun Abisola
 Data Analyst
